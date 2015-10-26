@@ -38,11 +38,11 @@ public class OptionsPickerDialog extends DialogFragment implements OnClickListen
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         Window window = getDialog().getWindow();
         window.setGravity(Gravity.BOTTOM);
-        window.setWindowAnimations(R.style.Picker_Anim);
+        window.setWindowAnimations(R.style.PickerAnim);
         window.setLayout(WindowManager.LayoutParams.MATCH_PARENT,
             WindowManager.LayoutParams.WRAP_CONTENT);
 
-        View view = inflater.inflate(R.layout.dialog_options_picker, null);
+        View view = inflater.inflate(R.layout.dialog_options_picker, container);
 
         // 确定和取消按钮
         view.findViewById(R.id.timepicker_b_submit).setOnClickListener(this);

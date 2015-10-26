@@ -1,8 +1,12 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
-    <style name="Picker"/>
-    <style name="Picker.Anim">
+
+    <style name="PickerAnim">
         <item name="android:windowEnterAnimation">@anim/abc_slide_in_bottom</item>
         <item name="android:windowExitAnimation">@anim/abc_slide_out_bottom</item>
+    </style>
+
+    <style name="Picker" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowNoTitle">true</item>
     </style>
 
     <style name="Picker.Constant">
