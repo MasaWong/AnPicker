@@ -2,14 +2,10 @@ package mw.ankara.picker;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.DialogFragment;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
 
 import java.text.ParseException;
 import java.util.Calendar;
@@ -21,28 +17,17 @@ import mw.ankara.picker.lib.WheelTime;
  * @author masawong
  * @since 7/12/15.
  */
-public class TimePickerDialog extends DialogFragment implements OnClickListener {
+public class TimePickerDialog extends PickerDialog implements OnClickListener {
 
     private WheelTime mWheelTime;
     private OnTimeSelectListener mTimeSelectListener;
 
     private Type mType = Type.ALL;
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setStyle(DialogFragment.STYLE_NO_TITLE, R.style.Picker_Constant);
-        setCancelable(true);
-    }
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        Window window = getDialog().getWindow();
-        window.setGravity(Gravity.BOTTOM);
-        window.setWindowAnimations(R.style.PickerAnim);
-        window.setLayout(WindowManager.LayoutParams.MATCH_PARENT,
-            WindowManager.LayoutParams.WRAP_CONTENT);
+        setGravityBottom();
 
         View view = inflater.inflate(R.layout.dialog_time_picker, container);
 
