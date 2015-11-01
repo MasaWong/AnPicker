@@ -32,11 +32,13 @@ public class PickerDialog extends DialogFragment {
     }
 
     public void show(AppCompatActivity activity) {
-        InputMethodManager imm = (InputMethodManager) activity.getSystemService(
-            Context.INPUT_METHOD_SERVICE);
         View focusedView = activity.getCurrentFocus();
         if (focusedView != null) {
-            imm.hideSoftInputFromWindow(focusedView.getWindowToken(), 0);
+            InputMethodManager imm = (InputMethodManager) activity.getSystemService(
+                Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(focusedView.getWindowToken(),
+                InputMethodManager.HIDE_NOT_ALWAYS);
+            focusedView.clearFocus();
         }
 
         show(activity.getSupportFragmentManager(), getClass().getSimpleName());
