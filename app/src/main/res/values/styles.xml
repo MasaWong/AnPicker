@@ -5,7 +5,8 @@
         <item name="android:windowExitAnimation">@anim/abc_slide_out_bottom</item>
     </style>
 
-    <style name="Picker" parent="Theme.AppCompat.Dialog">
+    <style name="Picker"
+        parent="Theme.AppCompat.Dialog">
         <item name="android:windowNoTitle">true</item>
     </style>
 

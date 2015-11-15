@@ -28,16 +28,16 @@ public class PickerDialog extends DialogFragment {
         window.setGravity(Gravity.BOTTOM);
         window.setWindowAnimations(R.style.PickerAnim);
         window.setLayout(WindowManager.LayoutParams.MATCH_PARENT,
-            WindowManager.LayoutParams.WRAP_CONTENT);
+                WindowManager.LayoutParams.WRAP_CONTENT);
     }
 
     public void show(AppCompatActivity activity) {
         View focusedView = activity.getCurrentFocus();
         if (focusedView != null) {
             InputMethodManager imm = (InputMethodManager) activity.getSystemService(
-                Context.INPUT_METHOD_SERVICE);
+                    Context.INPUT_METHOD_SERVICE);
             imm.hideSoftInputFromWindow(focusedView.getWindowToken(),
-                InputMethodManager.HIDE_NOT_ALWAYS);
+                    InputMethodManager.HIDE_NOT_ALWAYS);
             focusedView.clearFocus();
         }
 

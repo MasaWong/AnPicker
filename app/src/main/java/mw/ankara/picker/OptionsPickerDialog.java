@@ -43,7 +43,7 @@ public class OptionsPickerDialog extends PickerDialog implements OnClickListener
     }
 
     public void setOnoptionsSelectListener(
-        OnOptionsSelectListener optionsSelectListener) {
+            OnOptionsSelectListener optionsSelectListener) {
         this.mOptionsSelectListener = optionsSelectListener;
     }
 
@@ -66,7 +66,7 @@ public class OptionsPickerDialog extends PickerDialog implements OnClickListener
         if (v.getId() == R.id.timepicker_b_submit && mOptionsSelectListener != null) {
             int[] optionsCurrentItems = mWheelOptions.getCurrentItems();
             mOptionsSelectListener.onOptionsSelect(optionsCurrentItems[0],
-                optionsCurrentItems[1], optionsCurrentItems[2]);
+                    optionsCurrentItems[1], optionsCurrentItems[2]);
         }
         dismiss();
     }

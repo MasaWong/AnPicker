@@ -127,16 +127,16 @@ public class WheelTime {
                 // 判断大小月及是否闰年,用来确定"日"的数据
                 int maxItem = 30;
                 if (list_big
-                    .contains(String.valueOf(wv_month.getCurrentItem() + 1))) {
+                        .contains(String.valueOf(wv_month.getCurrentItem() + 1))) {
                     wv_day.setAdapter(new NumericWheelAdapter(1, 31));
                     maxItem = 31;
                 } else if (list_little.contains(String.valueOf(wv_month
-                    .getCurrentItem() + 1))) {
+                        .getCurrentItem() + 1))) {
                     wv_day.setAdapter(new NumericWheelAdapter(1, 30));
                     maxItem = 30;
                 } else {
                     if ((year_num % 4 == 0 && year_num % 100 != 0)
-                        || year_num % 400 == 0) {
+                            || year_num % 400 == 0) {
                         wv_day.setAdapter(new NumericWheelAdapter(1, 29));
                         maxItem = 29;
                     } else {
@@ -164,8 +164,8 @@ public class WheelTime {
                     maxItem = 30;
                 } else {
                     if (((wv_year.getCurrentItem() + START_YEAR) % 4 == 0 && (wv_year
-                        .getCurrentItem() + START_YEAR) % 100 != 0)
-                        || (wv_year.getCurrentItem() + START_YEAR) % 400 == 0) {
+                            .getCurrentItem() + START_YEAR) % 100 != 0)
+                            || (wv_year.getCurrentItem() + START_YEAR) % 400 == 0) {
                         wv_day.setAdapter(new NumericWheelAdapter(1, 29));
                         maxItem = 29;
                     } else {
@@ -233,9 +233,9 @@ public class WheelTime {
 
     public String getTime() {
         return String.valueOf((wv_year.getCurrentItem() + START_YEAR))
-            + "-" + (wv_month.getCurrentItem() + 1)
-            + "-" + (wv_day.getCurrentItem() + 1)
-            + " " + wv_hours.getCurrentItem()
-            + ":" + wv_mins.getCurrentItem();
+                + "-" + (wv_month.getCurrentItem() + 1)
+                + "-" + (wv_day.getCurrentItem() + 1)
+                + " " + wv_hours.getCurrentItem()
+                + ":" + wv_mins.getCurrentItem();
     }
 }
